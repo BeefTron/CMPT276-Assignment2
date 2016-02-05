@@ -1,0 +1,32 @@
+<div class="title">
+  <h1>People</h1>
+</div>
+<div class="index">
+  <br>
+  <p class="center"><%= link_to 'New Person', new_person_path %></p>
+  <br><br>
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Image</th>
+      <th>Age</th>
+      <th colspan="3" />
+    </tr>
+
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.fname %></td>
+        <td><%= person.lname %></td>
+        <td style="background-color: <%= person.color %>;border-radius: 15px;">
+
+          <%= image_tag("male2.png", height: person.height, width: person.weight ) %>
+        </td>
+        <td><%= person.age %></td>
+        <td><%= link_to 'Details', person_path(person) %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+        <td class="button"><%= button_to 'Delete', person_path(person), method: :delete, class: 'btn' %></td>
+      </tr>
+      <% end %>
+    </table>
+</div>

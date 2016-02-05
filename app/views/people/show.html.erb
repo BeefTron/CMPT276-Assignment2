@@ -1,0 +1,36 @@
+<div class="body">
+  <p>
+    <strong>First Name:</strong>
+    <%= @person.fname %>
+  </p>
+
+  <p>
+    <strong>Last Name:</strong>
+    <%= @person.lname %>
+  </p>
+
+  <p>
+    Weight:
+    <%= @person.weight %>
+  </p>
+
+  <p>
+    Height:
+    <%= @person.height %>
+  </p>
+
+  <p>
+    Color:
+    <%= @person.color %>
+  </p>
+
+  <p>
+    Age:
+    <%= @person.age %>
+  </p>
+  <br />
+  <p style="text-align: center;">
+    <%= link_to 'Edit', edit_person_path(@person) %> |
+    <%= link_to 'Back', people_path %>
+  </p>
+</div>
